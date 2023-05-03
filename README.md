@@ -57,6 +57,9 @@ docker-compose up -d
 Vas a telegram, le hablas al bot que creaste y cuando apretes /start o le mandes /start te va a devolver la data.
 Funciona igual en un grupo
 
+![Screenshot de telegram donde se ve que el usuario envia un /start y el bot lo saluda y le devuelve su id junto con el id de la conversaci](screenshot-telegram.png)
+
+
 ## Desinstalación
 
 Si ya obtuviste la data que necesitabas y no lo vas a volver a usar, da de baja el contenedor, elimina las imagen y también podes borrar la carpeta del proyecto
