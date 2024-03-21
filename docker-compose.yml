@@ -1,7 +1,6 @@
-version: "3.9"
 services:
   app:
-    image: nothingbutlucas/telegram-id-sender-bot:1.0
+    image: nothingbutlucas/telegram-id-sender-bot:latest
     environment:
       TOKEN: "ACA-VA-EL-TOKEN-QUE-TE-DIO-@BOTFATHER" # Token del bot
     command: ["python3", "-u", "main.py"]
