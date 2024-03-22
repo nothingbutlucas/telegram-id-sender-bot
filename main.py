@@ -31,7 +31,7 @@ def main() -> None:
     application.run_polling()
 
 
-def handle_donaciones(update, context):
+async def handle_donaciones(update, context):
     user_first_name = update.effective_user["first_name"]
     user_language = update.effective_user["language_code"]
     if user_language == "es":
@@ -49,7 +49,7 @@ def handle_donaciones(update, context):
         )
         button = f"Buy me a Ko-Fi ☕"
 
-    update.message.reply_text(
+    await update.message.reply_text(
         text=mensaje,
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(
@@ -64,7 +64,7 @@ def handle_donaciones(update, context):
     )
 
 
-def handle_message(update, context):
+async def handle_message(update, context):
     user_first_name = update.effective_user["first_name"]
     user_language = update.effective_user["language_code"]
     text = update.message.text.lower().strip()
@@ -74,16 +74,16 @@ def handle_message(update, context):
         else:
             hola_response = f"Hi {user_first_name}!"
 
-        update.message.reply_text(text=hola_response, parse_mode="html")
+        await update.message.reply_text(text=hola_response, parse_mode="html")
 
 
-def handle_ver_codigo(update, context):
+async def handle_ver_codigo(update, context):
     user_first_name = update.effective_user["first_name"]
     user_language = update.effective_user["language_code"]
     if user_language == "es":
         response = (
             f"Hola {user_first_name}! Puedes ver el codigo en GitHub usando el botón de abajo!"
-            f"<i>De paso seguime ;)</i>"
+            f"\n<i>De paso seguime ;)</i>"
         )
         button = f"Ver el codigo en GitHub"
     else:
@@ -93,7 +93,7 @@ def handle_ver_codigo(update, context):
         )
         button = f"See the code on GitHub"
 
-    update.message.reply_text(
+    await update.message.reply_text(
         text=response,
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(
