@@ -37,12 +37,11 @@ docker build -t telegram-id-sender-bot .
 Editas el docker-compose para poner el token de tu bot en donde está la variable TOKEN:
 
 ```yaml
-version: "3.9"
 services:
   app:
-    image: nothingbutlucas/telegram-id-sender-bot:1.0
+    image: nothingbutlucas/telegram-id-sender-bot:latest
     environment:
-      TOKEN: "ACA-VA-EL-TOKEN-QUE-TE-DIO-@BOTFATHER" # Token del bot
+      TOKEN: "ACA-VA-EL-TOKEN-QUE-TE-DIO-@BOTFATHER"
     command: ["python3", "-u", "main.py"]
 ```
 
